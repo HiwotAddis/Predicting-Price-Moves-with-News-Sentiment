@@ -7,3 +7,5 @@ seaborn
 nltk 
 spacy
 jupyter
+plotly
+wordcloud
