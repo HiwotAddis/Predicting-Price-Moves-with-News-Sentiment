@@ -1,6 +1,9 @@
 from textblob import TextBlob
-import pandas as pd
 
-def compute_sentiment(df: pd.DataFrame, text_column: str = "headline") -> pd.DataFrame:
-    df['sentiment'] = df[text_column].apply(lambda x: TextBlob(str(x)).sentiment.polarity)
-    return df
+def analyze_sentiment(text: str) -> float:
+    """
+    Analyze sentiment of a given text using TextBlob.
+    Returns a polarity score between -1 (negative) and +1 (positive).
+    """
+    blob = TextBlob(text)
+    return blob.sentiment.polarity
